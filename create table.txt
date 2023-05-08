@@ -1,0 +1,86 @@
+SQL> create table brands( 2 bid number(5),
+3 bname varchar(20)
+4 );
+
+Table created.
+
+SQL> alter table brands 2 add primary
+key(bid); Table altered. SQL> create table inv_user(
+2	user_id varchar(20),
+3	name varchar(20),
+4	password varchar(20),
+5	last_login timestamp,
+6	user_type varchar(10) 7	);
+
+Table created.
+
+SQL> create table categories( 2 cid number(5),
+3 category_name varchar(20)
+4 );
+
+Table created.
+
+SQL> alter table categories 2 add primary
+key(cid); Table altered.
+SQL> alter table inv_user
+2 add primary key(user_id);
+ 
+Table altered.
+
+SQL> create table product(
+2	pid number(5) primary key,
+3	cid number(5) references categories(cid), 4 bid number(5) references brands(bid),
+5	sid number(5),
+6	pname varchar(20),
+7	p_stock number(5),
+8	price number(5),
+9	added_date date); Table created.
+SQL> create table stores( 2 sid number(5),
+3	sname varchar(20),
+4	address varchar(20),
+5	mobno number(10)
+6 );
+
+Table created.
+
+SQL> alter table stores
+2 add primary key(sid);
+
+Table altered.
+
+SQL> alter table product
+2 add foreign key(sid)references stores(sid); Table altered.
+SQL> create table provides(
+2 bid number(5)references brands(bid), 3 sid number(5)references stores(sid), 4 discount number(5));
+
+Table created.
+
+SQL> create table customer_cart( 2 cust_id number(5) primary key, 3 name varchar(20),
+4 mobno number(10)
+5 );
+ 
+Table created.
+
+SQL> create table select_product(
+2	cust_id number(5) references customer_cart(cust_id),
+3	pid number(5)references product(pid), 4 quantity number(4)
+5 );
+
+Table created.
+
+SQL> create table transaction( 2 id number(5) primary key, 3 total_amount number(5),
+4	paid number(5),
+5	due number(5),
+6	gst number(3),
+7	discount number(5),
+8	payment_method varchar(10),
+9	cart_id number(5) references customer_cart(cust_id) 10 );
+
+Table created.
+
+
+SQL> create table invoice( 2 item_no number(5),
+3	product_name varchar(20),
+4	quantity number(5),
+5	net_price number(5),
+6	transaction_id number(5)references transaction(id) 7 );

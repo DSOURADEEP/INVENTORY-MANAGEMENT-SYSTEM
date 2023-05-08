@@ -1,0 +1,190 @@
+DATA INSERTED INTO THE USERS TABLE:
+SQL> insert into brands values( 2 '&bid'
+3 ,
+4 '&bname');
+Enter value for bid: 1 old 2: '&bid'
+new 2: '1'
+Enter value for bname: Apple old 4: '&bname')
+ 
+new 4: 'Apple')
+
+1 row created.
+1 row created.
+
+SQL> insert into brands values(2,'Samsung'); 1 row created.
+SQL> insert into brands values(3,'Nike'); 1 row created.
+SQL> insert into brands values(4,'Fortune'); 1 row created.
+INSERT INTO IN USER:
+
+SQL> insert into inv_user values( 2 '&user_id',
+3	'&name',
+4	'&password',
+5	'&last_login',
+6	'&user_type');
+Enter value for user_id: vidit@gmail.com old 2: '&user_id',
+new 2: 'vidit@gmail.com', Enter value for name: vidit old 3: '&name',
+new 3: 'vidit',
+Enter value for password: 1234 old 4: '&password',
+new 4: '1234',
+Enter value for last_login: 31-oct-18 12:40 old 5: '&last_login',
+new 5: '31-oct-18 12:40',
+Enter value for user_type: admin old 6: '&user_type')
+new 6: 'admin')
+
+1 row created.
+
+SQL> insert into inv_user values('harsh@gmail.com','Harsh Khanelwal','1111','30-oct- 18 10:20','Manager');
+ 
+1 row created.
+
+SQL> insert into inv_user values('prashant@gmail.com','Prashant','0011','29-oct-18 10:20','Accountant');
+
+1 row created.
+
+INSERT INTO CATEGORIES:
+
+SQL> insert into categories values( 2 '&cid',
+3 '&category_name'); Enter value for cid: 1 old 2: '&cid',
+new 2: '1',
+Enter value for category_name: Electroincs old 3: '&category_name')
+new 3: 'Electroincs')
+
+1 row created.
+
+SQL> insert into categories values(2,'Clothing'); 1 row created.
+SQL> insert into categories values(3,'Grocey'); 1 row created.
+INSERT INTO STORE
+SQL> insert into stores values( 2 '&sid',
+3	'&sname',
+4	'&address',
+5	'&mobno'); Enter value for sid:
+1 old 2: '&sid',
+new 2: '1',
+Enter value for sname: Ram kumar old 3: '&sname',
+new 3: 'Ram kumar',
+Enter value for address: Katpadi vellore old 4: '&address',
+new 4: 'Katpadi vellore',
+Enter value for mobno: 9999999999 old 5: '&mobno')
+ 
+new 5: '9999999999')
+
+1 row created.
+
+SQL> insert into stores values(2,'Rakesh kumar','chennai',8888555541);
+
+1 row created.
+
+SQL> insert into stores values(3,'Suraj','Haryana',7777555541); 1 row created.
+INSERT INTO PRODUCT:
+
+SQL> insert into product values( 2 '&pid',
+3 '&cid',
+4 '&bid',
+5 '&sid',
+6	'&pname',
+7	'&p_stock',
+8	'&price',
+9	'&added_date'); Enter value for pid: 1 old 2: '&pid',
+new 2: '1',
+Enter value for cid: 1 old 3: '&cid',
+new 3: '1',
+Enter value for bid: 1 old 4: '&bid',
+new 4: '1',
+Enter value for sid: 1 old 5: '&sid',
+new 5: '1',
+Enter value for pname: IPHONE old 6: '&pname',
+new 6: 'IPHONE',
+Enter value for p_stock: 4 old 7: '&p_stock',
+new 7: '4',
+Enter value for price: 45000 old 8: '&price',
+new 8: '45000',
+Enter value for added_date: 31-oct-18 old 9: '&added_date')
+ 
+new 9: '31-oct-18')
+
+1 row created.
+
+SQL> insert into product values(2,1,1,1,'Airpods',3,19000,'27-oct- 18'); 1 row created.
+SQL> insert into product values(3,1,1,1,'Smart Watch',3,19000,'27-oct-18'); 1 row created.
+SQL> insert into product values(4,2,3,2,'Air Max',6,7000,'27-oct-18'); 1 row created.
+SQL> insert into product values(5,3,4,3,'REFINED OIL',6,750,'25-oct-18'); 1 row created.
+INSERT INTO PROVIDES:
+
+SQL> insert into provides values(1,1,12); 1 row created.
+SQL> insert into provides values(2,2,7); 1 row created.
+SQL> insert into provides values(3,3,15); 1 row created.
+SQL> insert into provides values(1,2,7);
+
+1 row created.
+SQL> insert into provides values(4,2,19); 1 row created.
+SQL> insert into provides values(4,3,20); 1 row created.
+INSERT INTO CUSTOMER_CART:
+ 
+
+SQL> insert into customer_cart values( 2 '&cust_id',
+3	'&name',
+4	'&mobno');
+Enter value for cust_id: 1 old 2: '&cust_id',
+new 2: '1',
+Enter value for name: Ram old 3: '&name',
+new 3: 'Ram',
+Enter value for mobno: 9876543210 old 4: '&mobno')
+new 4: '9876543210')
+
+1 row created.
+
+SQL> insert into customer_cart values(2,'Shyam',7777777777); 1 row created.
+SQL> insert into customer_cart values(3,'Mohan',7777777775);
+
+1 row created.
+
+INSERT INTO SELECT_PRODUCT:
+
+SQL> insert into select_product values( 2 '&cust_id',
+3 '&pid',
+4 '&quantity');
+Enter value for cust_id: 1 old 2: '&cust_id',
+new 2: '1',
+Enter value for pid: 2 old 3: '&pid',
+new 3: '2',
+Enter value for quantity: 2 old 4: '&quantity')
+new 4: '2')
+
+1 row created.
+
+SQL> insert into select_product values(1,3,1); 1 row created.
+SQL> insert into select_product values(2,3,3); 1 row created.
+SQL> insert into select_product values(3,2,1); 1 row created.
+
+INSERT INTO TRANSACTIONS:
+
+SQL> insert into transaction values( 2 '&id',
+3	'&total_amount',
+4	'&paid',
+5 '&due',
+6 '&gst',
+7	'&discount',
+8	'&payment_method',
+9	'&cart_id'); Enter value for id: 1 old 2: '&id',
+new 2: '1',
+Enter value for total_amount: 57000 old 3: '&total_amount',
+new 3: '25000',
+Enter value for paid: 2000 old 4: '&paid',
+new 4: '20000',
+Enter value for due: 5000 old 5: '&due',
+new 5: '5000',
+Enter value for gst: 350 old 6: '&gst',
+new 6: '350',
+Enter value for discount: 350 old 7: '&discount',
+new 7: '350',
+Enter value for payment_method: card old 8: '&payment_method',
+new 8: 'card',
+Enter value for cart_id: 1 old 9: '&cart_id')
+new 9: '1')
+
+1 row created.
+insert into transaction values(2,57000,57000,0,570,570,'cash',2);
+SQL> insert into transaction values(3,19000,17000,2000,190,190,'cash',3);
+1 row created. SQL> insert into transaction values(3,19000,17000,2000,190,190,'cash',3);
+
+1 row created.

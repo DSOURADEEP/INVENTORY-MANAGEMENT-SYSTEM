@@ -1,0 +1,3 @@
+ CONCLUSION:
+Hence a working inventory management system has been made through the concepts that we have been taught in our DBMS course using the various DDL and DML commands to enter, retrieve and modify data as and when required.
+

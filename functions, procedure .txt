@@ -1,0 +1,39 @@
+Functions:
+
+SQL> declare
+2	due1 number(7);
+3	cart_id1 number(7);
+4	function get_cart(c_id number)return number is 5 begin
+6	return (c_id);
+7	end;
+8	begin
+9	cart_id1:=get_cart('&c_id');
+10	select due into due1 from transaction where cart_id=cart_id1;
+11	dbms_output.put_line(due1);
+12	end; 13	/
+Enter value for c_id: 1
+old 9: cart_id1:=get_cart('&c_id');
+new 9: cart_id1:=get_cart('1');
+5000
+
+PL/SQL procedure successfully completed.
+
+Procedure:
+
+SQL> DECLARE
+2	a number;
+3	b number;
+4	PROCEDURE check_stock(x IN number) IS 5 BEGIN
+6	IF x < 2 THEN
+7	dbms_output.put_line('Stock is Less');
+8	ELSE
+9	dbms_output.put_line('Enough Stock'); 10 END IF;
+11	END;
+12	BEGIN
+13	b:='&b';
+14	select p_stock into a from product where pid=b;
+15	check_stock(a);
+16	
+17	Enter value for b: 2 old 13:	b:='&b';
+18	new 13:	b:='2'; Enough Stock
+19	PL/SQL procedure successfully completed.

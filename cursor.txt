@@ -1,0 +1,22 @@
+Cursors:
+
+SQL> DECLARE
+2	p_id product.pid%type;
+3	p_name product.pname%type;
+4	p_stock product.p_stock%type; 5 cursor p_product is
+6 select pid,pname ,p_stock from product; 7 begin
+8	open p_product;
+9	loop
+10	fetch p_product into p_id,p_name,p_stock;
+11	exit when p_product%notfound;
+12	dbms_output.put_line(p_id||' '||p_name||' '||p_stock);
+13	end loop;
+14	close p_product;
+15	end; 16 /
+1	IPHONE 4
+2	Airpods 3
+3	Smart Watch 3
+4	Air Max 6
+5	REFINED OIL 6
+
+PL/SQL procedure successfully completed.
